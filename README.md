@@ -32,23 +32,8 @@ curl --location --request POST 'http://localhost:8888/actuator/busrefresh' \
 --header 'Cookie: JSESSIONID=AED2C36D0144D792E43AD35BA8968C71'
 ```
 
-### Issue config client with @ConfigurationProperties
-If config client uses ``@ConfigurationProperties`` with ``@EnableConfigurationProperties/@ConfigurationPropertiesScan``, 
-the new config won't be loaded into this properties even you use ``@RefreshScope``
+### Config client refresh properties
+In the config client, the property bindings made with the ``@ConfigurationProperties`` and the property readings directly from the ``Environment`` interface
+are automatically refreshed
 
-This is not a bug, check this ticket: https://github.com/spring-cloud/spring-cloud-commons/issues/846
-
-To make it work, you have to define properties bean with ``@Bean``
-
-```java
-@Configuration
-public class ConfigProperties {
-
-    @Bean
-    @RefreshScope // important
-    @ConfigurationProperties(prefix = "item")
-    public Item item() {
-        return new Item();
-    }
-}
-```
+The attributes bounded with ``@Value`` in the beans having the annotation ``@RefreshScope`` is refreshed
