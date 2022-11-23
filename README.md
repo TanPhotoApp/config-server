@@ -37,3 +37,5 @@ In the config client, the property bindings made with the ``@ConfigurationProper
 are automatically refreshed
 
 The attributes bounded with ``@Value`` in the beans having the annotation ``@RefreshScope`` is refreshed
+
+Read more: https://soshace.com/spring-cloud-config-refresh-strategies/
