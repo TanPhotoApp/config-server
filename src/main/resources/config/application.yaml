@@ -1,0 +1,4 @@
+# This config file is used by all config client
+
+token:
+  signingKey: ahihi12345
