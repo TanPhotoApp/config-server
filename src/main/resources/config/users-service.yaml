@@ -1,3 +1,11 @@
 # This config file is downloaded by users-service only
 
-test: aaaaa
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/photo-app
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: PASSWORD
+  jpa:
+    hibernate:
+      ddl-auto: update
