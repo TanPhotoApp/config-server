@@ -4,8 +4,8 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/photo-app
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: PASSWORD
+    username: '{cipher}AQC4DyyUvLsY/7IXgPHBS8FE5sn84d2BvHghWAREaHVYhskFupvBNUgTou7qwUMAR1prTlO7wQrSB5O8Dx9Vhw0sMBh1o6aZ4aWGR70r8BwjqBzG7jRqvK74nKN+zTHU31EfiWZyPMWaFLjefcb9EaD17pyVCdR+jgOuP5t8NZe9fZ9CGRi2zyR3PZZ8rY4p4eizDqmy/svPnqSY/7HgDfMQGTjUxyAHnUZt/3kXLTB4MeJgr5llAANqTpVsSGMCTMJdNyuDk36HJEXEoGnX4NwhD28CMsC4zhvUuDbyuuV7N9bh51AOIXh7VG7oZgXvNVPjqZw1Faw8bbAV5klHTV8bvpKFqFNWiVdgwLywXzllPlSevF52oZapPvtLxrVlZ0M='
+    password: '{cipher}AQBqB3QmMU3axa8JMpNdXMCq8wt7viljroW7nSF+ylKDJEick4duPk5H0SO01bvDUkoxUUBSWdOvQONbPH44kP21DmPAuKNrImNj9pQ8gH8Za1NGdxVH7RklhEi+q6hO4AbGnXML961KhY85xFzNUs01gZsfXM1VGeXF5NeotvFntM/8X7OxXFjQ72PLr1n99DXhe9lowGDCAxMYsRbAptXsi8JMRGsaWtNynPGPawobGRnE0Av43vBik9HWwIJMeWFPRZI6nGWuc7IpyWbWV4nqNFnahEY8mthFyyq0HSdi+A+NM25WfPYy2VfB2EfdtggqCBpzVhKEDN9LKQN3ZBP1osLKMBqQw9Zf03F8dv6KDLF9AJEugcxigjgB+9pYmzY='
   jpa:
     hibernate:
       ddl-auto: update

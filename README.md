@@ -28,8 +28,7 @@ spring:
 ### Refresh config
 Send a POST refresh to busrefresh actuator endpoint:
 ```shell
-curl --location --request POST 'http://localhost:8888/actuator/busrefresh' \
---header 'Cookie: JSESSIONID=AED2C36D0144D792E43AD35BA8968C71'
+curl --location --request POST 'http://localhost:8888/actuator/busrefresh'
 ```
 
 ### Config client refresh properties
@@ -39,3 +38,50 @@ are automatically refreshed
 The attributes bounded with ``@Value`` in the beans having the annotation ``@RefreshScope`` is refreshed
 
 Read more: https://soshace.com/spring-cloud-config-refresh-strategies/
+
+### Encryption and decryption
+To keep credentials properties (username, password, ...) more secured in properties file, we should encrypt them instead of storing plain text \
+Here are the steps:
+
+1. Add encryption key to bootstrap.properties/.yaml
+```yaml
+# Symmetric key
+encrypt:
+  key: 9mlnaslkjzv823jkasdiofahjs91aslfasjf1j
+```
+```yaml
+# Asymmetric key
+encrypt:
+  key-store:
+    location: apikey.jks
+    alias: apikey
+    password: test123456
+```
+
+**Note:** You can use ``keytool`` to generate keystore
+```shell
+keytool -genkeypair -alias apikey -keyalg RSA -keystore apikey.jks
+```
+
+**Note:** Since spring cloud 2020, they bootstrap is not enabled by default, we have to add ``spring-cloud-starter-bootstrap``
+to make bootstrap.properties loaded
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-bootstrap</artifactId>
+</dependency>
+```
+
+2. Make a ``POST`` request to config server to get the encrypted value
+```shell
+curl --location --request POST 'http://localhost:8888/encrypt' \
+--header 'Content-Type: text/plain' \
+--data-raw 'root'
+```
+3. Change the plain text to encrypted value with prefix ``{cipher}``
+```yaml
+token:
+  signingKey: '{cipher}9a641a553fb4fed2ac5c1eba32a04d4766d14c95dcdff470cadbb496e35ed163'
+```
+
+**Note:** With yaml file, you have to put your encrypted value in ``'{cipher}...'`` to make it work. You don't need to do it with ``.properties`` file
