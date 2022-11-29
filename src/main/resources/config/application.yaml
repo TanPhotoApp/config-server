@@ -9,3 +9,21 @@ spring:
   sleuth:
     sampler:
       probability: 1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.instance-id:${random.value}}
+    prefer-ip-address: true
+    status-page-url-path: /actuator/health
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
