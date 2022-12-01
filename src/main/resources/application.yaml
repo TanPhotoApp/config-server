@@ -4,7 +4,6 @@ server:
 spring:
   application:
     name: config-server
-    # This enables File System Backend
   profiles:
     active: native
   cloud:
@@ -16,7 +15,6 @@ spring:
           password:
           clone-on-start: true
           default-label: main
-          # This enables File System Backend
         native:
           search-locations: "[classpath:/, classpath:/config, classpath:/config/{application}, classpath:/config/{application}/{profile}]"
 
