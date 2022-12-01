@@ -1,5 +1,3 @@
-# This config file is used by all config client
-
 token:
   signingKey: '{cipher}AQCbKL8ZUsLXjbb6MQ+9ESO08DfYv+QTKB+kgGWNbLyiUrwjk6EYcRkqS7S65jF7qjil3LnODjUB/bxqBa+gMZItny/S14KWmRCzbXVh8YU+qIAJ705RCUJMeLfBaRR34quAJe34vlzRbZszOGiFl8hT8ImamSI4CilFzTYb9hQDXvQbd5RtT4UTQCNMqMkUFwVsRiv8GAMy/sgCSm0vcK4thhKqyrJ/BjShVBwIiK6R/GgxPwixF1Y7Y50eOaVYKcrmUStSQE0GHaZWh9ZOA+h9G94rxOfRI0mMZELW72c3CAd86wVVcC35QoOla8PFIDJK3QBYF3Dbk3IUGbu1txOP4uvAwYPHBq/GCM1nVjAK85t/1iWrDI9lbWd1j79qu3JEL9ENJEj+/bgrmNnMPjgXTUDDyFWNEEmk2kaJtevWP/VHqTDWZn+TrU7MN8sPDH4='
 
@@ -19,11 +17,12 @@ eureka:
     prefer-ip-address: true
     status-page-url-path: /actuator/health
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      show-details: always
+feign:
+  client:
+    config:
+      default:
+        logger-level: FULL
+
+logging:
+  file:
+    name: application.log
