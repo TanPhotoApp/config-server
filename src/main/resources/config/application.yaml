@@ -27,7 +27,3 @@ feign:
     config:
       default:
         logger-level: FULL
-
-logging:
-  file:
-    name: application.log
