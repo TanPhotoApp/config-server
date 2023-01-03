@@ -1,5 +1,3 @@
-# This config file is downloaded by users-service only
-
 spring:
   datasource:
     username: '{cipher}AQB6Nov2F+Fv/yEHK6gMoZTYQ/TLo2cKRXInUWXjMly42uS3BV1JhDGdVKcF92yu1xOSgvTMqcA+v9NlrWWGLMgqExRvzZ9PJL0vHoWzFB1jZXTjwMz5Ua+73j8H659LCWYS58HFpwc06Mr9NnjqK7atjFxLz6MUBj9j8LjlW/0smo7dN5Sbe0N66nNAgYN/3QEUI9yziC6W2Yi1DgIkAD/H3V3dQGF/7M3cpH+mJxHcSl5LKgTx1G+oahT9M0cNsBF1PcQjpo6aZf1y4/ayIbpmuLQ8dPx9A8xR2WLz+3UZJ9QG0KM0guxHvknENJ8E97GQpvluZ8XQPH04v8Ewk7qjIl1DxnKfsxRw/M8q4CjkhRDnUpcbdhw5Olf2YeUMFss='
